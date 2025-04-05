@@ -1,16 +1,17 @@
 import time
 import keyboard
 
-time.sleep(1)
+pressed = False
+
 while True:
-    try:
-        if keyboard.is_pressed("g"):
-            startTime = time.time()
-            time.sleep(1)
-            endTime = time.time() 
-            print(endTime - startTime)
-            break
-    except:
-        print("fortnite")
+    if keyboard.read_key() == "space" and pressed == False:
+        startTime = time.time()
+        pressed = True
+
+    if keyboard.read_key() == "space" and pressed == True:
+        endTime = time.time()
+        pressed = False
         break
+
+print(endTime - startTime)
 
