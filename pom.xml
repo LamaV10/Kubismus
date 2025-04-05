@@ -4,8 +4,8 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
                              
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.beispiel</groupId>
-    <artifactId>tui-projekt</artifactId>
+    <groupId>dein.projekt</groupId>
+    <artifactId>lanterna-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -15,5 +15,18 @@
             <version>3.1.1</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>LeertasteInTUI</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
