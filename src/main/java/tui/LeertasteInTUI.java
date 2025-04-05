@@ -1,9 +1,12 @@
-import String;
+package tui;
+
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 
 public class LeertasteInTUI {
     public static void main(String[] args) {
@@ -13,24 +16,24 @@ public class LeertasteInTUI {
             terminal.setCursorVisible(false);
             terminal.clearScreen();
 
-            terminal.putString(0, 0, "Drück die Leertaste (ESC zum Beenden)", null, null);
+            TextGraphics tg = terminal.newTextGraphics(); // <- Das ist neu
+
+            tg.putString(0, 0, "Drück die Leertaste (ESC zum Beenden)");
 
             boolean running = true;
             while (running) {
-                KeyStroke keyStroke = terminal.pollInput(); // non-blocking
+                KeyStroke keyStroke = terminal.pollInput();
                 if (keyStroke != null) {
                     if (keyStroke.getKeyType() == KeyType.Character && keyStroke.getCharacter() == ' ') {
-                        terminal.putString(0, 1, "Leertaste erkannt!                   ", null, null);
+                        tg.putString(0, 1, "Leertaste erkannt!        ");
                     } else if (keyStroke.getKeyType() == KeyType.Escape) {
                         running = false;
                     }
                 }
-
-                Thread.sleep(50); // kleine Pause zur CPU-Schonung
+                Thread.sleep(50);
             }
 
             terminal.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
