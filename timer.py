@@ -13,5 +13,5 @@ while True:
         pressed = False
         break
 
-print(endTime - startTime)
+print(round(endTime - startTime, 2))
 
