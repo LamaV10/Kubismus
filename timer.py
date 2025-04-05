@@ -3,15 +3,17 @@ import keyboard
 
 pressed = False
 
-while True:
+def timer():
+    global pressed 
+
     if keyboard.read_key() == "space" and pressed == False:
         startTime = time.time()
         pressed = True
 
     if keyboard.read_key() == "space" and pressed == True:
         endTime = time.time()
+        print(round(endTime - startTime, 2))
         pressed = False
-        break
 
-print(round(endTime - startTime, 2))
-
+while True:
+    timer()
