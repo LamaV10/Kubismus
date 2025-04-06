@@ -1,3 +1,4 @@
+import os
 import time
 import keyboard
 
@@ -5,6 +6,8 @@ pressed = False
 finished = False
 delay = 2 
 delayTime = 0
+
+os.system('cls' if os.name == 'nt' else 'clear')
 
 def timer():
     global pressed 
