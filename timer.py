@@ -3,31 +3,30 @@ import time
 import keyboard
 
 pressed = False
-finished = False
-delay = 1 
-delayTime = 0
+# delay = 2 
+# delayTime = 0
+fortnite = 0
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
 def timer():
     global pressed 
-    global finished
-    global delay
-    global delayTime
+    # global delay
+    # global delayTime
+    global fortnite
 
-    currentTime = time.time()
+    # currentTime = time.time()
 
-    if delay + delayTime <= currentTime: 
-        if keyboard.read_key() == "space" and pressed == False:
-            startTime = time.time()
-            pressed = True
-            delayTime = time.time()
+    if keyboard.read_key() == "space" and pressed == False:
+        startTime = time.time()
+        pressed = True
 
     if keyboard.read_key() == "space" and pressed == True: 
         endTime = time.time()
-        print(round(endTime - startTime, 2))
         pressed = False
-        finished = True
+        if fortnite % 2 == 0: 
+            print(round(endTime - startTime, 2))
+        fortnite += 1
 
 
 while True:
