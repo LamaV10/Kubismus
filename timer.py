@@ -4,7 +4,7 @@ import keyboard
 
 pressed = False
 finished = False
-delay = 2 
+delay = 1 
 delayTime = 0
 
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -21,7 +21,7 @@ def timer():
         if keyboard.read_key() == "space" and pressed == False:
             startTime = time.time()
             pressed = True
-        delayTime = time.time()
+            delayTime = time.time()
 
     if keyboard.read_key() == "space" and pressed == True: 
         endTime = time.time()
@@ -29,10 +29,6 @@ def timer():
         pressed = False
         finished = True
 
-    if finished == True:
-        startTime = 0
-        endTime = 0
-        finished = False
 
 while True:
     timer()
