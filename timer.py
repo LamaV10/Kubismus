@@ -7,6 +7,8 @@ printCount = 0
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
+print("Press space to start and then again to stop!")
+
 def timer():
     global pressed 
     global printCount
