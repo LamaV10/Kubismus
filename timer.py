@@ -3,7 +3,7 @@ import time
 import keyboard
 
 pressed = False
-printCount = 0
+printCount = True 
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -20,9 +20,11 @@ def timer():
     if keyboard.read_key() == "space" and pressed == True: 
         endTime = time.time()
         pressed = False
-        if printCount % 2 == 0: 
+        if printCount == True: 
             print(round(endTime - startTime, 2))
-        printCount += 1
+            printCount = False 
+        else:
+            printCount = True 
 
 
 while True:
