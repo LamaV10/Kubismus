@@ -4,10 +4,12 @@ import keyboard
 
 pressed = False
 printCount = True 
+
 # clears the terminal
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print("Press space to start and then again to stop!")
+
 # main timer function
 def timer():
     global pressed 
@@ -29,6 +31,6 @@ def timer():
         else:
             printCount = True 
 
-
+# main loop
 while True:
     timer()
