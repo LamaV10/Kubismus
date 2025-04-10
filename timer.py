@@ -26,7 +26,7 @@ def timer():
         pressed = False
         # every second output is being printed => otherwise would print the time between every space press
         if printCount == True: 
-            print(round(endTime - startTime, 2))
+            print("Time: ", round(endTime - startTime, 2), "s")
             printCount = False 
         else:
             printCount = True 
@@ -34,3 +34,5 @@ def timer():
 # main loop
 while True:
     timer()
+
+
