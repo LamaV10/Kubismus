@@ -24,9 +24,10 @@ def timer():
     if keyboard.read_key() == "space" and pressed == True: 
         endTime = time.time()
         pressed = False
+        totalTime = round(endTime - startTime, 2)
         # every second output is being printed => otherwise would print the time between every space press
         if printCount == True: 
-            print("Time: ", round(endTime - startTime, 2), "s")
+            print("Time: ", totalTime, "s")
             printCount = False 
         else:
             printCount = True 
