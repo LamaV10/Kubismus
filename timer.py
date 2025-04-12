@@ -1,4 +1,3 @@
-import numpy
 import os
 import time
 import keyboard
@@ -33,7 +32,7 @@ def timer():
             printCount = False 
 
             # Writing multiple lines to an existing file using writelines()
-            timeString = numpy.format_float_positional(totalTime)
+            timeString = str(totalTime)
             sString = "s"
 
             with open("times.txt", "w") as f:
