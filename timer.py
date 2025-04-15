@@ -35,9 +35,8 @@ def timer():
             timeString = str(totalTime)
             sString = "s"
 
-            with open("times.txt", "w") as f:
-                f.write(timeString)
-                f.write("\n")
+            with open("times.txt", "a") as f:
+                f.write(timeString + '\n')
         else:
             printCount = True 
 
