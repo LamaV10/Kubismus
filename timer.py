@@ -4,6 +4,7 @@ import keyboard
 
 pressed = False
 printCount = True 
+timesCount = 0
 
 # clears the terminal
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -14,6 +15,7 @@ print("Press space to start and then again to stop!")
 def timer():
     global pressed 
     global printCount
+    global timesCount
 
     # start the timer
     if keyboard.read_key() == "space" and pressed == False:
@@ -30,6 +32,7 @@ def timer():
         if printCount == True: 
             print("Time: ", totalTime, "s")
             printCount = False 
+            timesCount += 1
 
             # Writing multiple lines to an existing file using writelines()
             timeString = str(totalTime)
@@ -37,6 +40,8 @@ def timer():
 
             with open("times.txt", "a") as f:
                 f.write(timeString + '\n')
+        elif timesCount == 5:
+            timesCount = 0
         else:
             printCount = True 
 
