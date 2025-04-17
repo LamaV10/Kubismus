@@ -39,7 +39,7 @@ def timer():
             sString = "s"
 
             with open("times.txt", "a") as f:
-                f.write(timeString + '\n')
+                f.write(timeString + ";" + "\n")
         elif timesCount == 5:
             timesCount = 0
         else:
