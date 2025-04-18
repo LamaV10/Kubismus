@@ -9,6 +9,11 @@ timesCount = 0
 # clears the terminal
 os.system('cls' if os.name == 'nt' else 'clear')
 
+# create times.txt file
+file = open("times.txt", "w")
+with open("times.txt", "a") as f:
+    f.write("ao5:" + "\n")
+
 print("Press space to start and then again to stop!")
 
 # main timer function
@@ -37,10 +42,12 @@ def timer():
             # Writing multiple lines to an existing file using writelines()
             timeString = str(totalTime)
             sString = "s"
-
             with open("times.txt", "a") as f:
                 f.write(timeString + ";" + "\n")
+
         elif timesCount == 5:
+            with open("times.txt", "a") as f:
+                f.write("\n" + "ao5:" + "\n")
             timesCount = 0
         else:
             printCount = True 
