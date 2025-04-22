@@ -9,8 +9,11 @@ timesCount = 0
 # clears the terminal
 os.system('cls' if os.name == 'nt' else 'clear')
 
-# create times.txt file
-file = open("times.txt", "w")
+# create times.txt file if not already there
+if os.path.isfile("times.txt") == False:
+    file = open("times.txt", "w")
+
+# starts the ao5
 with open("times.txt", "a") as f:
     f.write("ao5:" + "\n")
 
