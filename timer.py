@@ -18,7 +18,7 @@ with open("times.txt", "a") as f:
     f.write("ao5:" + "\n")
 
 print("Press space to start and then again to stop!")
-print("\n ao5:")
+print("ao5:")
 
 # main timer function
 def timer():
