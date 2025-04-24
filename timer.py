@@ -18,6 +18,7 @@ with open("times.txt", "a") as f:
     f.write("ao5:" + "\n")
 
 print("Press space to start and then again to stop!")
+print("\n ao5:")
 
 # main timer function
 def timer():
@@ -49,6 +50,7 @@ def timer():
                 f.write(timeString + ";" + "\n")
 
         elif timesCount == 5:
+            print("\n ao5:")
             with open("times.txt", "a") as f:
                 f.write("\n" + "ao5:" + "\n")
             timesCount = 0
