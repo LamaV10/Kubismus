@@ -49,6 +49,7 @@ def timer():
             with open("times.txt", "a") as f:
                 f.write(timeString + ";" + "\n")
 
+        # section ao5's in the file and print 
         elif timesCount == 5:
             print("\n ao5:")
             with open("times.txt", "a") as f:
